@@ -1,63 +1,28 @@
 \name{gene.gene.statistic}
 \alias{gene.gene.statistic}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{ ~~function to do ... ~~ }
+\title{ Compute gene-gene statistics }
 \description{
-  ~~ A concise (1-5 lines) description of what the function does. ~~
+ Computes gene gene statistics.
 }
 \usage{
 gene.gene.statistic(g1, g2, numPapers, PaperLen)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{g1}{ ~~Describe \code{g1} here~~ }
-  \item{g2}{ ~~Describe \code{g2} here~~ }
-  \item{numPapers}{ ~~Describe \code{numPapers} here~~ }
-  \item{PaperLen}{ ~~Describe \code{PaperLen} here~~ }
+  \item{g1}{The LocusLink identifier for one of the genes. }
+  \item{g2}{The LocusLink identifier for the other gene. }
+  \item{numPapers}{The number of papers being used. }
+  \item{PaperLen}{ A vector of length \code{numPapers} with the 
+   number of citations for each paper.  }
 }
 \details{
-  ~~ If necessary, more details than the __description__  above ~~
+To be filled in later.
 }
 \value{
-  ~Describe the value returned
-  If it is a LIST, use
-  \item{comp1 }{Description of 'comp1'}
-  \item{comp2 }{Description of 'comp2'}
-  ...
+To be filled in later.
 }
-\references{ ~put references to the literature/web site here ~ }
-\author{ ~~who you are~~ }
-\note{ ~~further notes~~ }
-
- ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{ ~~objects to See Also as \code{\link{~~fun~~}}, ~~~ }
+\references{ The Wiley Book chapter. }
+\author{ B. Ding}
+\seealso{ \code{\link{twowayTable}} }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(g1, g2, numPapers, PaperLen)
-{
-   ## no adjustment
-   twT <- twowayTable(g1, g2, weights=F, numPapers)
-   original <- twTStats(twT)
-   
-   ## Gene size adjusted
-   twT <- actorAdjTable(twT)
-   gs <- twTStats(twT)
-   
-   ## Paper size adjusted
-   twT <- twowayTable(g1, g2, weights=T, numPapers, PaperLen)
-   ps <- twTStats(twT)
-   
-   ## both
-   twT <- actorAdjTable(twT)
-   both <- twTStats(twT)
- 
-   return(list(original=original, gs=gs, ps=ps, both=both))
- }
 }
-\keyword{ ~kwd1 }% at least one, from doc/KEYWORDS
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
