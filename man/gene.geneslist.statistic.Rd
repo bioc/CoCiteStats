@@ -26,7 +26,7 @@ To be filled in later.
 \references{ The Springer Book. }
 \author{B. Ding }
 
-\seealso{ \code{\link{twoWayTable}}}
+\seealso{ \code{\link{twowayTable}}}
 \examples{
 }
 \keyword{ manip }
