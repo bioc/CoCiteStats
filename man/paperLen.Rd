@@ -17,7 +17,7 @@ paperLen(X)
  This function first finds the set of unique PMIDs associated with the
  input set of LocusLink IDS. Then for each PMID it finds the number of
  LocusLink identifiers associated with that paper. The function uses
- different sets of variable mappings from the \code{humanLLMappings}
+ different sets of variable mappings from the \pkg{humanLLMappings}
  package.
 }
 \value{

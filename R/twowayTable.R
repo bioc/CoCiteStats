@@ -15,7 +15,7 @@ twowayTable <- function (g1, g2, weights = TRUE, numPapers, PaperLen)
     ina = is.na(g1pp) | g1pp == "NA"
     g1pp = g1pp[!ina]
     ina = is.na(g2pp) | g2pp == "NA"
-    g2pp = g2pp[!is.na(g2pp)]
+    g2pp = g2pp[!ina]
     matches = intersect(g1pp, g2pp)
     unions = union(g1pp, g2pp)
     just1 = setdiff(g1pp, g2pp)
