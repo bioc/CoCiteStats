@@ -12,7 +12,6 @@ function(gene, geneslist, numPapers, PaperLen, n.resamp=100)
     
     for (i in 1:n.resamp)
     {
-       print(i)
        geneslist.null <- sample(ls(humanLLMappingsLL2PMID),n, replace=FALSE)
        gene.geneslist.stat.null[[i]] <- gene.geneslist.statistic(gene,
                 geneslist.null, numPapers, PaperLen)

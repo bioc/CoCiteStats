@@ -12,7 +12,6 @@ function(gene, geneslist, numPapers, PaperLen)
      }
     
     temp <- NULL
-    length(temp) <- 4
     for ( i in names(gene.geneslist.stat[[1]]))
      temp[[i]] <- apply(sapply(gene.geneslist.stat, function(x) x[[i]]),1,sum)
     return(temp) 
