@@ -8,7 +8,8 @@ function(gene, geneslist, numPapers, PaperLen)
    
    for ( i in geneslist)
     {
-      gene.geneslist.stat[[i]] <- gene.gene.statistic(gene, i,numPapers,PaperLen)
+      gene.geneslist.stat[[i]] <- gene.gene.statistic(gene, i,
+             numPapers,PaperLen)
      }
     
     temp <- NULL

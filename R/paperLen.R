@@ -1,10 +1,9 @@
-"paperLen" <-
-function (X) 
+paperLen <- function (X) 
 {
     require("humanLLMappings") || stop("can't match without data")
     papersByLL = mget(X, humanLLMappingsLL2PMID, ifnotfound = NA)
     papers = unique(unlist(papersByLL))
-    inap = is.na(papers)
+    inap = is.na(papers) | papers == "NA"
     if (any(inap)) 
         papers = papers[!inap]
     if (length(papers) == 0) 

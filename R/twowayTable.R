@@ -1,8 +1,8 @@
-"twowayTable" <-
-function (g1, g2, weights = TRUE, numPapers, PaperLen) 
+twowayTable <- function (g1, g2, weights = TRUE, numPapers, PaperLen) 
 {
     if (missing(numPapers)) 
-        numPapers = length(unique(unlist(eapply(humanLLMappingsLL2PMID,function(x) x))))
+        numPapers = length(unique(unlist(eapply(
+              humanLLMappingsLL2PMID,function(x) x))))
     if (weights==TRUE & missing(PaperLen))
       {
          PaperLen = paperLen(ls(humanLLMappingsLL2PMID))$Counts
@@ -11,7 +11,10 @@ function (g1, g2, weights = TRUE, numPapers, PaperLen)
     wh = paperLen(c(g1, g2))
     g1pp = wh$papers[[g1]]
     g2pp = wh$papers[[g2]]
-    g1pp = g1pp[!is.na(g1pp)]
+    ##FIXME: defensive programming as string NA's seem to appear at times
+    ina = is.na(g1pp) | g1pp == "NA"
+    g1pp = g1pp[!ina]
+    ina = is.na(g2pp) | g2pp == "NA"
     g2pp = g2pp[!is.na(g2pp)]
     matches = intersect(g1pp, g2pp)
     unions = union(g1pp, g2pp)
