@@ -1,4 +1,4 @@
-"gene.geneslist.sig" <-
+gene.geneslist.sig <-
 function(gene, geneslist, numPapers, PaperLen, n.resamp=100)
  {
    require("humanLLMappings")
@@ -10,9 +10,10 @@ function(gene, geneslist, numPapers, PaperLen, n.resamp=100)
     gene.geneslist.stat.null <- list()
     length(gene.geneslist.stat.null) <- n.resamp
     
+    gN = ls(humanLLMappingsLL2PMID)
     for (i in 1:n.resamp)
     {
-       geneslist.null <- sample(ls(humanLLMappingsLL2PMID),n, replace=FALSE)
+       geneslist.null <- sample(gN, n, replace=FALSE)
        gene.geneslist.stat.null[[i]] <- gene.geneslist.statistic(gene,
                 geneslist.null, numPapers, PaperLen)
     }
