@@ -9,6 +9,8 @@ twowayTable <- function (g1, g2, weights = TRUE, numPapers, PaperLen)
       }   
     
     wh = paperLen(c(g1, g2))
+    if (!length(wh$papers))  # no papers found
+      return(c(n11=0, n12=0, n21=0, n22=numPapers))
     g1pp = wh$papers[[g1]]
     g2pp = wh$papers[[g2]]
     ##FIXME: defensive programming as string NA's seem to appear at times
