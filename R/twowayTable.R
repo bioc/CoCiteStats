@@ -3,10 +3,8 @@ twowayTable <- function (g1, g2, weights = TRUE, numPapers, PaperLen)
     if (missing(numPapers)) 
         numPapers = length(unique(unlist(eapply(
               humanLLMappingsLL2PMID,function(x) x))))
-    if (weights==TRUE & missing(PaperLen))
-      {
-         PaperLen = paperLen(ls(humanLLMappingsLL2PMID))$Counts
-      }   
+    if (missing(PaperLen) && (weights == TRUE))
+      PaperLen <- unlist(eapply(humanLLMappingsPMID2LL, length))
     
     wh = paperLen(c(g1, g2))
     if (!length(wh$papers))  # no papers found

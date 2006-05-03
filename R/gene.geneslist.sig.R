@@ -2,6 +2,9 @@ gene.geneslist.sig <-
 function(gene, geneslist, numPapers, PaperLen, n.resamp=100)
  {
    require("humanLLMappings")
+   if (missing(PaperLen)) 
+       PaperLen <- unlist(eapply(humanLLMappingsPMID2LL, length))
+
    n <- length(geneslist)
     gene.geneslist.stat <- gene.geneslist.statistic(gene, geneslist, 
                                 numPapers, PaperLen)
