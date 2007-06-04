@@ -11,8 +11,8 @@ that association.
 gene.geneslist.statistic(gene, geneslist, numPapers, PaperLen)
 }
 \arguments{
-  \item{gene}{The LocusLink identifier for the gene of interest. }
-  \item{geneslist}{A vector of LocusLink identifiers for the set of genes. }
+  \item{gene}{The Entrez Gene identifier for the gene of interest. }
+  \item{geneslist}{A vector of Entrez Gene identifiers for the set of genes. }
   \item{numPapers}{The number of papers.}
   \item{PaperLen}{A vector of length \code{numPapers} containing the 
     number of citations for each paper. }

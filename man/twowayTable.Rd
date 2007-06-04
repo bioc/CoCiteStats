@@ -12,8 +12,8 @@ twowayTable(g1, g2, weights = TRUE, numPapers, PaperLen)
 }
 
 \arguments{
-  \item{g1}{The LocusLink identifier for gene 1.}
-  \item{g2}{The LocusLink identifier for gene 2.}
+  \item{g1}{The EntrezGene identifier for gene 1.}
+  \item{g2}{The EntrezGene identifier for gene 2.}
   \item{weights}{\code{TRUE} or \code{FALSE} indicating whether paper
   size weights should be used. }
   \item{numPapers}{The total number of papers under consideration.}
