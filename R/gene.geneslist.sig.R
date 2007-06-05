@@ -1,13 +1,13 @@
 gene.geneslist.sig <-
-function(gene, geneslist, numPapers, PaperLen, n.resamp=100)
+function(gene, geneslist, paperLens, n.resamp=100)
  {
-   require("humanLLMappings")
-   if (missing(PaperLen)) 
-       PaperLen <- unlist(eapply(humanLLMappingsPMID2LL, length))
+   if (missing(paperLens)) 
+       paperLens <- unlist(eapply(humanLLMappingsPMID2LL, length))
+   numPapers = length(paperLens)
 
    n <- length(geneslist)
     gene.geneslist.stat <- gene.geneslist.statistic(gene, geneslist, 
-                                numPapers, PaperLen)
+                                paperLens)
     gene.geneslist.stat <- sapply(gene.geneslist.stat,function(x) x)
     
     gene.geneslist.stat.null <- list()
@@ -18,7 +18,7 @@ function(gene, geneslist, numPapers, PaperLen, n.resamp=100)
     {
        geneslist.null <- sample(gN, n, replace=FALSE)
        gene.geneslist.stat.null[[i]] <- gene.geneslist.statistic(gene,
-                geneslist.null, numPapers, PaperLen)
+                geneslist.null, paperLens)
     }
     
     temp <- lapply(gene.geneslist.stat.null, function(x) 
@@ -31,6 +31,7 @@ function(gene, geneslist, numPapers, PaperLen, n.resamp=100)
        temp1 <- temp1 + temp[[i]]
     }   
     
-    return(list(statistic=t(gene.geneslist.stat), pval=apply(temp1,1, function(x) x/n.resamp)))
+    return(list(statistic=t(gene.geneslist.stat), 
+            pval=apply(temp1,1, function(x) x/n.resamp)))
   }
 

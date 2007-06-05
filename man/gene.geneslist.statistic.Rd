@@ -8,14 +8,13 @@ genes is measured using co-citation in PubMed as a basis for measuring
 that association.
 }
 \usage{
-gene.geneslist.statistic(gene, geneslist, numPapers, PaperLen)
+gene.geneslist.statistic(gene, geneslist, paperLens)
 }
 \arguments{
   \item{gene}{The Entrez Gene identifier for the gene of interest. }
   \item{geneslist}{A vector of Entrez Gene identifiers for the set of genes. }
-  \item{numPapers}{The number of papers.}
-  \item{PaperLen}{A vector of length \code{numPapers} containing the 
-    number of citations for each paper. }
+  \item{paperLens}{A vector containing the number of genes cited by each 
+   paper.}
 }
 \details{
 To be filled in later.

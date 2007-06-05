@@ -11,7 +11,7 @@ paperLen(X)
 }
 
 \arguments{
-  \item{X}{A vector of Entrez Geneidentifiers. }
+  \item{X}{A vector of Entrez Gene identifiers. }
 }
 \details{
  This function first finds the set of unique PMIDs associated with the

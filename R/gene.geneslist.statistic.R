@@ -1,15 +1,15 @@
 "gene.geneslist.statistic" <-
-function(gene, geneslist, numPapers, PaperLen)
+function(gene, geneslist, paperLens)
 {
-   gene.geneslist.stat <- list()
+   numPapers = length(paperLens)
    n <- length(geneslist)
-   length(gene.geneslist.stat) <- n
+   gene.geneslist.stat <- vector("list", length=n)
    names(gene.geneslist.stat) <- geneslist
    
    for ( i in geneslist)
     {
       gene.geneslist.stat[[i]] <- gene.gene.statistic(gene, i,
-             numPapers,PaperLen)
+             paperLens)
      }
     
     temp <- NULL

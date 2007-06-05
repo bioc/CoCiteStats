@@ -1,6 +1,7 @@
 "gene.gene.statistic" <-
-function(g1, g2, numPapers, PaperLen)
+function(g1, g2, paperLens)
 {
+   numPapers = length(paperLen)
    ## no adjustment
    twT <- twowayTable(g1, g2, weights=FALSE, numPapers)
    original <- twTStats(twT)
@@ -10,7 +11,7 @@ function(g1, g2, numPapers, PaperLen)
    gs <- twTStats(twT)
    
    ## Paper size adjusted
-   twT <- twowayTable(g1, g2, weights=TRUE, numPapers, PaperLen)
+   twT <- twowayTable(g1, g2, weights=TRUE, paperLens)
    ps <- twTStats(twT)
    
    ## both

@@ -1,20 +1,18 @@
-twowayTable <- function (g1, g2, weights = TRUE, numPapers, PaperLen) 
+twowayTable <- function (g1, g2, weights = TRUE, paperLens) 
 {
-    if (missing(numPapers)) 
-        numPapers = length(unique(unlist(eapply(
-              humanLLMappingsLL2PMID,function(x) x))))
-    if (missing(PaperLen) && (weights == TRUE))
-      PaperLen <- unlist(eapply(humanLLMappingsPMID2LL, length))
+    if (missing(paperLens))  
+      paperLens <- unlist(eapply(humanLLMappingsPMID2LL, length))
+
+    numPapers = length(paperLens)
     
-    wh = paperLen(c(g1, g2))
+    wh = paperLens[c(g1, g2)]
     if (!length(wh$papers))  # no papers found
       return(c(n11=0, n12=0, n21=0, n22=numPapers))
     g1pp = wh$papers[[g1]]
     g2pp = wh$papers[[g2]]
-    ##FIXME: defensive programming as string NA's seem to appear at times
-    ina = is.na(g1pp) | g1pp == "NA"
+    ina = is.na(g1pp) 
     g1pp = g1pp[!ina]
-    ina = is.na(g2pp) | g2pp == "NA"
+    ina = is.na(g2pp) 
     g2pp = g2pp[!ina]
     matches = intersect(g1pp, g2pp)
     unions = union(g1pp, g2pp)
@@ -24,7 +22,7 @@ twowayTable <- function (g1, g2, weights = TRUE, numPapers, PaperLen)
         n11 = sum(1/wh$Counts[matches])
         n12 = sum(1/wh$Counts[just1])
         n21 = sum(1/wh$Counts[just2])
-        n22 = sum(1/PaperLen[!(names(PaperLen) %in% unions)])
+        n22 = sum(1/paperLens[!(names(paperLens) %in% unions)])
        }
     else {
         n11 = length(matches)

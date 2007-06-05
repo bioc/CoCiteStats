@@ -10,16 +10,14 @@ gene size (GS) and both, to evaluate the significance of
 co-citation of a gene of interest and a gene list
 }
 \usage{
-gene.geneslist.sig(gene, geneslist, numPapers, PaperLen, n.resamp=100)
+gene.geneslist.sig(gene, geneslist, paperLens, n.resamp=100)
 }
 
 \arguments{
   \item{gene}{ Gene of interest. }
   \item{geneslist}{The gene list with which the co-citation of the gene of 
      interest is to be evaluated.}
-  \item{numPapers}{Total number of PubMed papers for consideration. 
-    Default is all PubMed papers in the \pkg{humanLLMappings} package. }
-  \item{PaperLen}{The sizes of the PubMed papers for consideration. 
+  \item{paperLens}{The sizes of the PubMed papers for consideration. 
     Default is the paper size of all the PubMed papers in the 
      \pkg{humanLLMappings} package.}  
   \item{n.resamp}{Number of resampling for generating empirical p-values.}
@@ -43,13 +41,8 @@ R. Gentleman. Bioconductor Technical Report, 2004}
  
 gene <- "705"
 geneslist <- "7216"
-numPapers <- length(unique(unlist(eapply(humanLLMappingsLL2PMID,
-                              function(x) x))))
 
-PaperLen <- paperLen(ls(humanLLMappingsLL2PMID))$Counts
-
-gene.geneslist.sig(gene, geneslist, numPapers, PaperLen, n.resamp=50)
-  
+gene.geneslist.sig(gene, geneslist, n.resamp=50)
 
 }
 \keyword{manip}
