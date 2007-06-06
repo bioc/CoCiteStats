@@ -8,7 +8,7 @@
   adjusted according to either the paper size or the gene size.
 }
 \usage{
-twowayTable(g1, g2, weights = TRUE, paperLens)
+twowayTable(g1, g2, weights = TRUE, paperLens=paperLen())
 }
 
 \arguments{
@@ -49,8 +49,9 @@ twowayTable(g1, g2, weights = TRUE, paperLens)
 \seealso{\code{\link{paperLen}}, \code{\link{twTStats}} }
 \examples{
 
-  twowayTable("10", "100")
-  twowayTable("10", "100", FALSE)
+  pL = paperLen()
+  twowayTable("10", "100", paperLens=pL)
+  twowayTable("10", "100", FALSE, paperLens=pL)
 }
 \keyword{manip}
 

@@ -5,7 +5,7 @@
  Computes gene gene statistics.
 }
 \usage{
-gene.gene.statistic(g1, g2, paperLens)
+gene.gene.statistic(g1, g2, paperLens = paperLen())
 }
 \arguments{
   \item{g1}{The Entrez Gene identifier for one of the genes. }
@@ -28,12 +28,16 @@ A list with entries
 \item{both} The output of \code{\link{twTStats}} on the data scaled for
  both paper and gene size.
 }
-\references{ The Wiley Book chapter. }
-\author{ B. Ding}
+\reference{ Testing Gene Associations Using Co-citation, by B. Ding and
+R. Gentleman. Bioconductor Technical Report, 2004  }
+\author{ B. Ding and R. Gentleman}
 \seealso{ \code{\link{twowayTable}} }
 \examples{
 
-s1 = paperLen(c("10", "101"))
+ g1 = "10"  #Entrez ID for gene 1
+ g2 = "101"  #Entrez ID for gene 2
+ pLens = paperLen()
+ gene.gene.statistic(g1, g2, pLens)
 
 }
 \keyword{ manip }

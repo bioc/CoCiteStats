@@ -1,28 +1,21 @@
-twowayTable <- function (g1, g2, weights = TRUE, paperLens) 
+twowayTable <- function (g1, g2, weights = TRUE, paperLens = paperLen()) 
 {
-    if (missing(paperLens))  
-      paperLens <- unlist(eapply(humanLLMappingsPMID2LL, length))
-
-    numPapers = length(paperLens)
+    numPapers = length(paperLens$counts)
     
-    wh = paperLens[c(g1, g2)]
-    if (!length(wh$papers))  # no papers found
+    g1pp = paperLens$papers[[g1, exact=TRUE]]
+    g2pp = paperLens$papers[[g2, exact=TRUE]]
+
+    if ( is.null(g1pp) || is.null(g2pp) )  # no papers found
       return(c(n11=0, n12=0, n21=0, n22=numPapers))
-    g1pp = wh$papers[[g1]]
-    g2pp = wh$papers[[g2]]
-    ina = is.na(g1pp) 
-    g1pp = g1pp[!ina]
-    ina = is.na(g2pp) 
-    g2pp = g2pp[!ina]
     matches = intersect(g1pp, g2pp)
     unions = union(g1pp, g2pp)
     just1 = setdiff(g1pp, g2pp)
     just2 = setdiff(g2pp, g1pp)
     if (weights) {
-        n11 = sum(1/wh$Counts[matches])
-        n12 = sum(1/wh$Counts[just1])
-        n21 = sum(1/wh$Counts[just2])
-        n22 = sum(1/paperLens[!(names(paperLens) %in% unions)])
+        n11 = sum(1/paperLens$counts[matches])
+        n12 = sum(1/paperLens$counts[just1])
+        n21 = sum(1/paperLens$counts[just2])
+        n22 = sum(1/paperLens$counts[!(names(paperLens$counts) %in% unions)])
        }
     else {
         n11 = length(matches)

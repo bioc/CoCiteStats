@@ -16,7 +16,16 @@ actorAdjTable(twT, eps = 1e-08)
   \item{eps}{A small quantity used to assess approximate equality.}
 }
 \details{
- Need more.
+ When testing for associations between entities, the social networks
+  literature has developed a number of tools to help measure such
+  associations.  We can think of genes (actors) as being joined by citation
+  in papers (events) and having two genes cited in the same paper (equivalent
+  to two actors attending the same event) suggests that they are related
+  to each other.  However, some genes are cited in many papers and so
+  we might want to discount the level of importance, as compared to genes
+  that are cited less often. And additionally, some papers cite very
+  many genes, and hence typically say less about them than a paper that
+  cites rather fewer genes.
 }
 \value{
   An adjusted two way table, with elements named \code{u11},

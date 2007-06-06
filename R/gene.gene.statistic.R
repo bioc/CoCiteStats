@@ -1,9 +1,8 @@
 "gene.gene.statistic" <-
-function(g1, g2, paperLens)
+function(g1, g2, paperLens = paperLen())
 {
-   numPapers = length(paperLen)
    ## no adjustment
-   twT <- twowayTable(g1, g2, weights=FALSE, numPapers)
+   twT <- twowayTable(g1, g2, weights=FALSE, paperLens)
    original <- twTStats(twT)
    
    ## Gene size adjusted
