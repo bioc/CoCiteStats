@@ -22,7 +22,7 @@ gene.geneslist.statistic(gene, geneslist, paperLens = paperLen())
 \value{
 To be filled in later.
 }
-\reference{ Testing Gene Associations Using Co-citation, by B. Ding and
+\references{ Testing Gene Associations Using Co-citation, by B. Ding and
 R. Gentleman. Bioconductor Technical Report, 2004} 
 
 \author{R. Gentleman }

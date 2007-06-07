@@ -28,7 +28,7 @@ A list with entries
 \item{both} The output of \code{\link{twTStats}} on the data scaled for
  both paper and gene size.
 }
-\reference{ Testing Gene Associations Using Co-citation, by B. Ding and
+\references{ Testing Gene Associations Using Co-citation, by B. Ding and
 R. Gentleman. Bioconductor Technical Report, 2004  }
 \author{ B. Ding and R. Gentleman}
 \seealso{ \code{\link{twowayTable}} }
