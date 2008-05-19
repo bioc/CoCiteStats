@@ -11,7 +11,7 @@ function(gene, geneslist, paperLens = paperLen(), n.resamp=100)
    gene.geneslist.stat.null <- list()
    length(gene.geneslist.stat.null) <- n.resamp
     
-   gN = ls(humanLLMappingsLL2PMID)
+   gN = Lkeys(org.Hs.egPMID)
    for (i in 1:n.resamp) {
       geneslist.null <- sample(gN, n, replace=FALSE)
       gene.geneslist.stat.null[[i]] <- gene.geneslist.statistic(gene,
