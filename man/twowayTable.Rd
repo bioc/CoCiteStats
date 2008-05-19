@@ -26,7 +26,7 @@ twowayTable(g1, g2, weights = TRUE, paperLens=paperLen())
   number of papers that cite only gene 1, only gene 2, both and
   neither. 
 
-  By default, we use the humanLLMappings package to define the set of
+  By default, we use the \pkg{org.Hs.eg.db} package to define the set of
   papers that are used in the computations.  For other organisms, or for more
   restricted sets of papers the user will need to supply the
   vector \code{paperLens} explicitly.

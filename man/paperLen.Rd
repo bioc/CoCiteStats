@@ -17,11 +17,11 @@ paperLen(x)
  This function first finds the set of unique PMIDs associated with the
  input set of Entrez Gene IDS. Then for each PMID it finds the number of
  Entrez Gene identifiers associated with that paper. The function uses
- different sets of variable mappings from the \pkg{humanLLMappings}
+ different sets of variable mappings from the \pkg{org.Hs.eg.db}
  package.
 
  If \code{x} is missing then all Entrez gene identifiers in the
- humanLLMappingsLL2PMID are used.
+ org.Hs.egPMID are used.
 
 }
 \value{

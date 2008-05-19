@@ -1,2 +1,3 @@
+importFrom("AnnotationDbi", "mget")
 
 export(actorAdjTable, gene.geneslist.sig, gene.geneslist.statistic, gene.gene.statistic, paperLen, twowayTable, twTStats)

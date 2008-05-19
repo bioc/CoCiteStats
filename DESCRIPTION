@@ -1,11 +1,12 @@
 Package: CoCiteStats
 Title: Different test statistics based on co-citation.
-Version: 1.13.0
+Version: 1.13.1
 Author: B. Ding and R. Gentleman
 Description: A collection of software tools for dealing with
         co-citation data.
 Maintainer: R. Gentleman <rgentlem@fhcrc.org>
 License: CPL
-Depends: R (>= 2.0), humanLLMappings
+Depends: R (>= 2.0), org.Hs.eg.db
+Imports: AnnotationDbi
 biocViews: Statistics
 
