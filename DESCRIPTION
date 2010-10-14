@@ -4,7 +4,7 @@ Version: 1.21.0
 Author: B. Ding and R. Gentleman
 Description: A collection of software tools for dealing with
         co-citation data.
-Maintainer: R. Gentleman <rgentlem@fhcrc.org>
+Maintainer: Biocore Team c/o BioC user list <bioconductor@stat.math.ethz.ch>
 License: CPL
 Depends: R (>= 2.0), org.Hs.eg.db
 Imports: AnnotationDbi
