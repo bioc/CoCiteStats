@@ -1,12 +1,12 @@
 Package: CoCiteStats
 Title: Different test statistics based on co-citation.
-Version: 1.35.0
+Version: 1.35.1
 Author: B. Ding and R. Gentleman
 Description: A collection of software tools for dealing with
         co-citation data.
-Maintainer: Bioconductor Package Maintainer <maintainer@bioconductor.org>
+Maintainer: Bioconductor Package Maintainer
+        <maintainer@bioconductor.org>
 License: CPL
 Depends: R (>= 2.0), org.Hs.eg.db
 Imports: AnnotationDbi
-biocViews: Bioinformatics
-
+biocViews: Software
