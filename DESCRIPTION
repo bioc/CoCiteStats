@@ -1,6 +1,6 @@
 Package: CoCiteStats
 Title: Different test statistics based on co-citation.
-Version: 1.67.0
+Version: 1.68.0
 Author: B. Ding and R. Gentleman
 Description: A collection of software tools for dealing with
         co-citation data.
